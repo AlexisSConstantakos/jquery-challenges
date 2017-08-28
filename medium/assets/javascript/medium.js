@@ -42,7 +42,61 @@
   //code in here wont run until page loads
   $(function(){
 
+    let teamOneShootButton = $("#teamone-shoot")
+    let teamTwoShootButton = $("#teamtwo-shoot")
+    let reset = $("#reset")
+    let teamOneGoal = $("#teamone-numhits")
+    let teamTwoGoal = $("#teamtwo-numhits")
+    let teamOneShot_Counter = 0
+    let teamTwoShot_Counter = 0
+    let teamOneShots = $("#teamone-numshots")
+    let teamTwoShots = $("#teamtwo-numshots")
+    let numReset = $("#num-resets")
 
+
+    teamOneShootButton.click(function(){
+      teamOneShot_Counter = teamOneShot_Counter + 1;
+        console.log(teamOneShots);
+          teamOneShots.text(teamOneShot_Counter);
+    let randomNumber = Math.random()
+      if(randomNumber > .5) {
+        teamOneGoal.html(parseInt(teamOneGoal.html()) + 1)
+    }
+    })
+
+    teamTwoShootButton.click(function(){
+      teamTwoShot_Counter = teamTwoShot_Counter + 1;
+        console.log(teamTwoShots);
+          teamTwoShots.text(teamTwoShot_Counter);
+    let randomNumber = Math.random()
+      if(randomNumber > .5) {
+        teamTwoGoal.html(parseInt(teamTwoGoal.html()) + 1)
+    }
+    })
+
+    reset.click(function(){
+
+      numReset.html(parseInt(numReset.html()) + 1);
+
+      teamOneShots.html(0);
+      teamTwoShots.html(0);
+      teamOneGoal.html(0);
+      teamTwoGoal.html(0);
+    })
+
+    teamOneShootButton .click(function() {
+      var color = $(this).css("background-color", "Salmon");
+    })
+    teamTwoShootButton.click(function() {
+      var color = $(this).css("background-color", "LightSeaGreen");
+    })
+
+    teamOneShots.click(function() {
+      var color = $(this).css("background", "WhiteSmoke");
+    })
+    teamTwoShots.click(function() {
+      var color = $(this).css("background", "Linen");
+    })
 
   })
 
